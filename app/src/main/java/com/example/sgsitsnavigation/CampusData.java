@@ -10,6 +10,10 @@ public class CampusData {
 
         buildings.add(new Building("Select Destination", ""));
 
+        buildings.add(new Building("Test 1", "Test_1"));
+        buildings.add(new Building("Test 2", "Test_2"));
+
+
         buildings.add(new Building("ATC Building", "ATC"));
         buildings.add(new Building("SGSITS Guest House", "GUEST_HOUSE"));
         buildings.add(new Building("LT Building", "LT"));

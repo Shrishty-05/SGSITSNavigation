@@ -5,6 +5,10 @@ public class CampusGraphData {
     public static CampusGraph createCampusGraph() {
         CampusGraph graph = new CampusGraph();
 
+        graph.addNode(new CampusNode("Test1", "Test_1", 22.589686, 75.317163));
+        graph.addNode(new CampusNode("Test2", "Test_2", 22.589340, 75.316800));
+
+
         // way points
         graph.addNode(new CampusNode("WP1", "Waypoint 1", 22.72635, 75.87356));
         graph.addNode(new CampusNode("WP2", "Waypoint 2", 22.72632, 75.87326));

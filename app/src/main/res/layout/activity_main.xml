@@ -10,17 +10,17 @@
         android:layout_height="match_parent"
         android:keepScreenOn="true" />
 
-    <Spinner
-        android:id="@+id/SpinnerStart"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:drawable/editbox_background"
-        android:elevation="10dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp" />
+<!--    <Spinner-->
+<!--        android:id="@+id/SpinnerStart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:background="@android:drawable/editbox_background"-->
+<!--        android:elevation="10dp"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingEnd="12dp" />-->
 
     <Spinner
         android:id="@+id/spinnerDestinations"

@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 //    fake golden gate location
-    private boolean USE_FAKE_LOCATION = true;
+    private boolean USE_FAKE_LOCATION = false;
 
 //    22.7261965/75.8739759
     private static final double FAKE_LAT = 22.726276;
     private static final double FAKE_LON = 75.874141;
 
     private Spinner spinnerStart;
-    private boolean USE_MANUAL_START = true;
+    private boolean USE_MANUAL_START = false;
     private String manualStartNodeId = "GATE";
 
     private PreviewView previewView;
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         arrowOverlayView = findViewById(R.id.arrowOverlayView);
         previewView = findViewById(R.id.previewView);
-        spinnerStart = findViewById(R.id.SpinnerStart);
+//        spinnerStart = findViewById(R.id.SpinnerStart);
         spinnerDestinations = findViewById(R.id.spinnerDestinations);
         mapView = findViewById(R.id.mapView);
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         campusGraph = CampusGraphData.createCampusGraph();
 
-        setupStartSpinner();
+//        setupStartSpinner();
         setupDestinationSpinner();
 
         if (hasAllPermissions()) {
@@ -160,37 +160,37 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         startLocationUpdates();
     }
 
-    private void setupStartSpinner() {
-
-        List<Building> buildings = CampusData.getBuildings();
-
-        ArrayAdapter<Building> adapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_item,
-                buildings
-        );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerStart.setAdapter(adapter);
-
-        spinnerStart.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(android.widget.AdapterView<?> parent, android.view.View view, int position, long id) {
-
-                if (position == 0) return;
-
-                Building selected = (Building) parent.getItemAtPosition(position);
-                manualStartNodeId = selected.getDestinationNodeId();
-
-                Toast.makeText(MainActivity.this,
-                        "Start set to: " + selected.getName(),
-                        Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(android.widget.AdapterView<?> parent) {
-            }
-        });
-    }
+//    private void setupStartSpinner() {
+//
+//        List<Building> buildings = CampusData.getBuildings();
+//
+//        ArrayAdapter<Building> adapter = new ArrayAdapter<>(
+//                this,
+//                android.R.layout.simple_spinner_item,
+//                buildings
+//        );
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerStart.setAdapter(adapter);
+//
+//        spinnerStart.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(android.widget.AdapterView<?> parent, android.view.View view, int position, long id) {
+//
+//                if (position == 0) return;
+//
+//                Building selected = (Building) parent.getItemAtPosition(position);
+//                manualStartNodeId = selected.getDestinationNodeId();
+//
+//                Toast.makeText(MainActivity.this,
+//                        "Start set to: " + selected.getName(),
+//                        Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(android.widget.AdapterView<?> parent) {
+//            }
+//        });
+//    }
 
     private void setupDestinationSpinner() {
         List<Building> buildings = CampusData.getBuildings();
@@ -496,7 +496,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         ArrayList<ArrowOverlayView.ArrowData> arrows = new ArrayList<>();
 
-        int maxArrows = 3;
+        int maxArrows = 7;
         int added = 0;
         float lastAcceptedDistance = -1000f;
 
