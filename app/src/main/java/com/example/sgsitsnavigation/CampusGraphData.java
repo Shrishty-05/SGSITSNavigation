@@ -7,6 +7,15 @@ public class CampusGraphData {
 
         graph.addNode(new CampusNode("Test1", "Test_1", 22.589686, 75.317163));
         graph.addNode(new CampusNode("Test2", "Test_2", 22.589340, 75.316800));
+        graph.addNode(new CampusNode("Test3", "Test_3", 22.589916, 75.316117));
+
+        graph.addBidirectionalEdge("Test1", "Test3", 1);
+        graph.addBidirectionalEdge("Test3", "Test2", 1);
+//        graph.addBidirectionalEdge("Test", "WP1", 1);
+
+
+
+
 
 
         // way points

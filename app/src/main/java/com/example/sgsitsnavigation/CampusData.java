@@ -12,6 +12,8 @@ public class CampusData {
 
         buildings.add(new Building("Test 1", "Test_1"));
         buildings.add(new Building("Test 2", "Test_2"));
+        buildings.add(new Building("Test 3", "Test_3"));
+
 
 
         buildings.add(new Building("ATC Building", "ATC"));

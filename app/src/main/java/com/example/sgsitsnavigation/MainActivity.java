@@ -496,7 +496,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         ArrayList<ArrowOverlayView.ArrowData> arrows = new ArrayList<>();
 
-        int maxArrows = 7;
+        int maxArrows = 7 ;
         int added = 0;
         float lastAcceptedDistance = -1000f;
 
